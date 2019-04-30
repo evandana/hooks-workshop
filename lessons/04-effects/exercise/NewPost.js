@@ -9,20 +9,42 @@ import RecentPostsDropdown from 'app/RecentPostsDropdown'
 
 const MAX_MESSAGE_LENGTH = 200
 
+function useLocalStorage(message, keyForLocalStorageDate) {
+  useEffect(() => {
+    setLocalStorage(keyForLocalStorageDate, message);
+  }, [message, keyForLocalStorageDate])
+}
+
+function useRefForFocus(takeFocus, messageRef) {
+  useEffect(() => {
+    if (takeFocus) {
+      messageRef.current.focus();
+    }
+  }, [takeFocus, messageRef]);
+}
+
 export default function NewPost({ takeFocus, date, onSuccess, showAvatar }) {
+
+  const keyForLocalStorageDate = makeNewPostKey(date);
+  const messageFromLocalStorage = getLocalStorageValue(keyForLocalStorageDate) || '';
   const [{ auth }] = useAppState()
-  const [message, setMessage] = useState('Ran around the lake.')
+  const [message, setMessage] = useState(messageFromLocalStorage);
   const messageTooLong = message.length > MAX_MESSAGE_LENGTH
+  const messageRef = useRef();
 
   function handleMessageChange(event) {
     setMessage(event.target.value)
   }
+
+  useLocalStorage(message, keyForLocalStorageDate);
+  useRefForFocus(takeFocus, messageRef);
 
   return (
     <div className={'NewPost' + (messageTooLong ? ' NewPost_error' : '')}>
       {showAvatar && <Avatar uid={auth.uid} size={70} />}
       <form className="NewPost_form">
         <textarea
+          ref={messageRef}
           className="NewPost_input"
           placeholder="Tell us about your workout!"
           value={message}

@@ -8,8 +8,36 @@ import { login } from "app/utils"
 // export default LoginFormFinal
 
 export default function LoginForm() {
+  const [shouldShowPassword, setShouldShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const handleShowPasswordTap = (evt) => {
+    setShouldShowPassword(evt.target.checked)
+  };
+
+  const handleSubmit = (evt) => {
+    console.log('evt', evt)
+    evt.preventDefault();
+    setIsLoading(true);
+    const [emailNode, passwordNode] = evt.target.elements;
+    login(emailNode.value, passwordNode.value)
+      .then(() => {
+        // all done
+        setErrorMessage(null);
+        setIsLoading(false);
+      })
+      .catch(err => {
+        // error
+        setErrorMessage(err.message);
+        setIsLoading(false);
+      });
+  };
+
   return (
-    <form>
+    <form
+      onSubmit={handleSubmit}  
+    >
       <VisuallyHidden>
         <label htmlFor="login:email">Email:</label>
       </VisuallyHidden>
@@ -25,7 +53,7 @@ export default function LoginForm() {
       </VisuallyHidden>
       <input
         id="login:password"
-        type="password"
+        type={shouldShowPassword ? "text" : "password" }
         className="inputField"
         placeholder="Password"
       />
@@ -35,15 +63,24 @@ export default function LoginForm() {
           <input
             className="passwordCheckbox"
             type="checkbox"
-            defaultChecked={false}
+            defaultChecked={shouldShowPassword}
+            onClick={handleShowPasswordTap}
           />{" "}
           show password
         </label>
       </div>
 
+      {errorMessage && (
+        <div>
+          <label style={{ color: 'red'}}>
+             {errorMessage}
+          </label>
+        </div>
+      )}
+
       <TabsButton>
         <FaSignInAlt />
-        <span>Login</span>
+        <span>{isLoading ? 'loading...' : 'Login'}</span>
       </TabsButton>
     </form>
   )
