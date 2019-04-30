@@ -64,12 +64,23 @@
 
 ### `useEffect` (component*Mount, component*Update)
 
+#### Why use?
+- "Only run code when certain things change"
+- Setting state can't be done in `render`
+
+#### Notes
 - **Side effect** for pure functions
 - `useEffect(() => { document.title = localPropName; }, [localPropName])`
 - Synchronizes things to the document
 - Changes to things that are NOT DOM
 - Second argument defines what props to `watch`
 - React conditionally calls `useEffect` if it needs to
+- Use `useLayoutEffect` for "measuring" things from DOM (componentDidMount/componentDidUpdate)
+  - Fired before `paint`, but _will_ trigger another `render`
+- Timimg
+  1. ![https://github.com/donavon/hook-flow/blob/master/hook-flow.png?raw=true]
+  1. `useLayoutEffect`
+  1. `useEffect`
 
 ### `useRef` (getElementById)
 
