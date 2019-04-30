@@ -81,6 +81,10 @@
   1. ![https://github.com/donavon/hook-flow/blob/master/hook-flow.png?raw=true]
   1. `useLayoutEffect`
   1. `useEffect`
+- Helpful for fetching data: restful and streaming
+
+#### Cleanup
+- `useEffect(() => { return cleanupCallback; }, [deps])`
 
 ### `useRef` (getElementById)
 
