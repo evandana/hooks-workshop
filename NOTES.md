@@ -112,9 +112,6 @@ Best for managing state within components and across it's decomposed parts
 - `<TabListContext.Provider><Component></TabsListContext.Provider`
 - Test the whole thing (entire Tab tree)
 
-## `useCallback`
-
-## `useMemo`
 
 ## `useReducer`
 
@@ -129,6 +126,8 @@ Best for managing state within components and across it's decomposed parts
 
 ## Animations
 
+**Best Used For** When animating stuff leaving (and sometimes coming)
+
 - **Physics animations** - best for UI interactions because they're able to respond to changes in "natural" ways
 - **Time-based** - good for PPT presentations
 - Created easily with hooks
@@ -139,3 +138,20 @@ Best for managing state within components and across it's decomposed parts
 - Check out `react-spring` for hooks-based animation libraries
 - **Get Derived State** is hard
   - Study [this example](./modules/app/Dashboard.js)
+
+## Optimizations
+
+### Slow function: `useMemo`
+```javascript
+useMemo(() => {
+  return someSlowFn(a, b, c)
+}, [a, b, c])
+```
+
+### Slow pure functional component: `memo()`
+
+`memo(fn())`
+
+## `useCallback`
+
+?

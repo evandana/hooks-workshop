@@ -50,6 +50,7 @@ Go to there ^^
   - **CAN** add a `useEffect` in a reducer to do something based on `state.action`
 - Use **Product Terms as** `dispatch` action names
 - `useEffect` allows for `setStateval` change for a `useStateval`
+- For testing with Enzyme, try full render
 
 
 ### When not to use
