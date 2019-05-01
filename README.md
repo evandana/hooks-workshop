@@ -22,10 +22,11 @@ Go to there ^^
 
 ### Best Practices
 
-- Expose `<Tabs />`, `<TabsList />`, `<Tab />`, `<TabPanels />`, instead of just `<Tabs />`
-    - By being composable, you reduce the need to maintain all the changes by consumers
-    - Helps support _Separation of Concerns_
-    - Test this tree only as a whole, not individually
+- **Composition** for shared components
+  - Expose `<Tabs />`, `<TabsList />`, `<Tab />`, `<TabPanels />`, instead of just `<Tabs />`
+  - By being composable, you reduce the need to maintain all the changes by consumers
+  - Helps support _Separation of Concerns_
+  - Test this tree only as a whole, not individually
 - Use React.Children
   - `Children.map(children, child => { /* ... */  })`
   - `Children.toArray(children, child => { /* ... */  })`
