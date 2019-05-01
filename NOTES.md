@@ -101,7 +101,12 @@
     - By being composable, you reduce the need to maintain all the changes by consumers
     - Splitting up is hard, if you have to manage props across elements, unless...
 - `useContext`, `createContext`
-  - 
+
+#### Testing
+
+- `createContext(mock)`
+- `<TabListContext.Provider><Component></TabsListContext.Provider`
+- Test the whole thing (entire Tab tree)
 
 ## `useCallback`
 ## `useMemo`
