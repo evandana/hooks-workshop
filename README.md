@@ -13,7 +13,8 @@
 
 ### When to use
 
-- 
+- HOCs or renderProps could be refactored to hooks, which are better at sharing state
+  - renderProps and HOCs are likely to be buggy with ASYNC code
 
 ### When not to use
 
@@ -56,6 +57,7 @@
   - Hooks call index counter reset on `render` **for each component**
     - Which is why this had to be done by React team and not just an external library
   - `useState` creates `props` (immutable), which could seem confusing since `this.state` is mutable
+  - Hooks are the new `mixins`
 
 ### Start with State
 
@@ -98,6 +100,18 @@
 
 - Get a reference to a DOM node, component, etc
 - `<div ref={someRefName}>` && `someRefName.current`
+
+## To Go from `class`ic React to Hooks
+
+1. Isolate `render` method
+1. Make pure function with destructured inputs (props and state) refactored
+1. Convert state to `useState`
+1. Change any `componentDid*`/`componentWill*` to `useEffect`
+1. Change all `this.` to `hook`-ey code
+
+#### What to replace with hooks?
+
+- Render prop or HOC
 
 ## Presentation Suggestion
 
