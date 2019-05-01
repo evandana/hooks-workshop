@@ -131,5 +131,11 @@ Best for managing state within components and across it's decomposed parts
 
 - **Physics animations** - best for UI interactions because they're able to respond to changes in "natural" ways
 - **Time-based** - good for PPT presentations
-
-### 
+- Created easily with hooks
+  - Think of it as a state change over time, using setTimeout  
+  - [Example](./modules/app/useTween.js)
+- Animate sound, values, styles, etc
+- Animations can help make a UI smooth and elegant UX (give appropriate focus/attention/feedback)
+- Check out `react-spring` for hooks-based animation libraries
+- **Get Derived State** is hard
+  - Study [this example](./modules/app/Dashboard.js)

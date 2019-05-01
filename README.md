@@ -49,6 +49,7 @@ Go to there ^^
   - **Can NOT** mutate state
   - **CAN** add a `useEffect` in a reducer to do something based on `state.action`
 - Use **Product Terms as** `dispatch` action names
+- `useEffect` allows for `setStateval` change for a `useStateval`
 
 
 ### When not to use
