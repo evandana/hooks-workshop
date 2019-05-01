@@ -9,7 +9,7 @@
 - I'm going to be pushing my updates to these lectures, so if you want to do them yourself, you'll need to pull a fresh copy from the original repo: [ReactTraining/hooks-workshop](https://github.com/ReactTraining/hooks-workshop)
 
 
-## >>> [Daily Notes](./NOTES.md) <<<
+## >> [Daily Notes](./NOTES.md) <<
 
 Go to there ^^
 

@@ -100,6 +100,8 @@
   - Expose `<Tabs />`, `<TabsList />`, `<Tab />`, `<TabPanels />`, instead of just `<Tabs />`
     - By being composable, you reduce the need to maintain all the changes by consumers
     - Splitting up is hard, if you have to manage props across elements, unless...
+  - Is it backwards compatible?
+    - **Yes**, if you create a thin wrapper to expose the original component API
 - `useContext`, `createContext`
 
 #### Testing
