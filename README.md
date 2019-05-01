@@ -41,6 +41,13 @@
 
 ### `useState` (this.state)
 
+#### Best For
+
+- Persistent state across renders
+- **Required** for binding vars to paint across renders when using Effects
+
+#### Notes
+
 - `useState` is great!
   - example: `const [minutes, setMinutes] = useState(5)`
   - You could have a complex object in state, but then you can't benefit from only doing necessary renders
@@ -78,10 +85,11 @@
 - Use `useLayoutEffect` for "measuring" things from DOM (componentDidMount/componentDidUpdate)
   - Fired before `paint`, but _will_ trigger another `render`
 - Timimg
-  1. ![https://github.com/donavon/hook-flow/blob/master/hook-flow.png?raw=true]
+  1. ![Timing of effects and rendering](https://github.com/donavon/hook-flow/blob/master/hook-flow.png?raw=true)
   1. `useLayoutEffect`
   1. `useEffect`
 - Helpful for fetching data: restful and streaming
+- Runs _after_ paint
 
 #### Cleanup
 - `useEffect(() => { return cleanupCallback; }, [deps])`
