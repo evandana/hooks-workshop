@@ -92,6 +92,8 @@
 
 ## `useContext`
 
+Best for managing state within components and across it's decomposed parts
+
 ### Use Case
 
 - Tabs component API story
@@ -111,5 +113,16 @@
 - Test the whole thing (entire Tab tree)
 
 ## `useCallback`
+
 ## `useMemo`
+
 ## `useReducer`
+
+- **Easier to read / more maintainable code**: Elevates language to "Product" language
+  - Instead of when state changes to `{error: 'abc', loading: false}`
+  - Use `dispatch({ type: 'SIGN_UP' })` and `useReducer((state, action) => { switch (state.action) { case ABC: ... } })`
+- Can be a **global** reducer for the app
+- Enables **multiple** reducers in an app
+- Better than monolith redux for things that don't need app-level state
+
+### Change useState to `dispatch({ type: 'SOME_ACTION', abc })

@@ -15,6 +15,12 @@ Go to there ^^
 
 ## Major Take Aways
 
+### TO ASK
+
+- ? I'm curious about the relationship between hooks and more traditional functional programming paradigms (and implementing libraries like redux, redux-observable, recompose), as well as best practices for testing
+- ? Hooks replaces Recompose
+- ? Should we then remove `redux`
+
 ### When to use
 
 - HOCs or renderProps could be refactored to hooks, which are better at sharing state
@@ -38,7 +44,10 @@ Go to there ^^
 
 ### Gotchas
 
-- 
+- **Order matters**: ensure that all hooks are always called in the same order
+  - Conditional hooks are tricky
+  - BAD: `if (abc) { useEffect(...) }`
+  - GOOD: `useEffect(() => { if (abc) {...} })`
 
 ## Presentation Suggestion
 
