@@ -126,3 +126,10 @@ Best for managing state within components and across it's decomposed parts
 - Better than monolith redux for things that don't need app-level state
 
 ### Change useState to `dispatch({ type: 'SOME_ACTION', abc })
+
+## Animations
+
+- **Physics animations** - best for UI interactions because they're able to respond to changes in "natural" ways
+- **Time-based** - good for PPT presentations
+
+### 
