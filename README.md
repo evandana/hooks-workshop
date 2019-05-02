@@ -7,13 +7,16 @@
 ## How to use this repo
 
 I'm going to be pushing my updates to these lectures, so if you want to do them yourself, you'll need to pull a fresh copy from the original repo: [ReactTraining/hooks-workshop](https://github.com/ReactTraining/hooks-workshop)
+
 ### I have 5 minutes
 - Read the [Major Take Aways](https://evandana.com/hooks-workshop/#major-take-aways)
+
 ### I have 15 minutes
-- Above +...
+- the above plus..
 - Read the [Daily Notes](./NOTES.md)
+
 ### I have 2 days
-- Above +...
+- the above plus..
 - Do all [the ORIGINAL exercises](https://github.com/ReactTraining/hooks-workshop) (remember, I've done the ones in this fork)
 
 
