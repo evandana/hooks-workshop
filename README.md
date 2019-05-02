@@ -14,7 +14,7 @@
   - Read the [Daily Notes](./NOTES.md)
 - **I have 2 days**
   - Above +...
-  - Do all [these exercises](./lessons)
+  - Do all [the ORIGINAL exercises](https://github.com/ReactTraining/hooks-workshop) (remember, I've done the ones in this fork)
 
 
 ## >> [Daily Notes](./NOTES.md) <<
@@ -26,8 +26,11 @@ Go to there ^^
 ### TO ASK
 
 - ? I'm curious about the relationship between hooks and more traditional functional programming paradigms (and implementing libraries like redux, redux-observable, recompose), as well as best practices for testing
-- ? Hooks replaces Recompose
-- ? Should we then remove `redux`
+  - **A**: Sounds like this would be best handled in a presentation! In short, Hooks provide a more elegant solution to scoped side-effects and state management. Regarding best practices for testing, Ryan suggested just rendering out the whole tree since it's not a big "cost". He also added the caveat that he maints React Router and they don't have to deal with the kind of node tree depth that we might and therefore he's interested in our solution.
+- ? Hooks replace Recompose?
+  - **A**: Yes. I asked Michael Jackson this after the workshop. Apparently Recompose – in retrospect – is considered a mistake by its creator because while it tries to address the problem of bringing together HOCs, it results in messy implementations. React Hooks achieve a better result in a more elegant way, is part of the React package, and provide access to an additional render-cycle stage (i.e. Run Effects, from the screenshot on the [Notes](./NOTES.md) page).
+- ? Should we then remove `redux`?
+  - **A**: No, see `useReducer` section in [Notes](./NOTES.md)
 
 ### When to use
 
